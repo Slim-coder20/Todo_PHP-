@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         
         $articles = [...$articles,[
             'title' => $title, 
-            'iamge' => $image, 
+            'image' => $image, 
             'category' => $category, 
             'content' => $content,
             'id' => time()

@@ -1,0 +1,31 @@
+.articles-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+.articles{
+  flex: 30%;
+  margin: 1rem;
+  min-height: 40rem;
+  cursor: pointer;
+
+}
+.articles:hover .img-container{
+  transform: scale(1.1);
+}
+.articles h2 {
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+
+}
+.img-container{
+  height: 30rem;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  transition: transform 1s;
+
+
+}

@@ -54,6 +54,11 @@ a {
   flex-flow: column;
 }
 
+.overflow{
+  overflow: hidden;
+
+}
+
 /* bouton */
 .btn {
   background-color: white;
