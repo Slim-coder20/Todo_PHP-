@@ -1,3 +1,3 @@
    <footer>
-        <p>Todo 2025 Dyma tout droit reservé </p>
+        <p>Blog 2025  tout droit reservé </p>
     </footer>

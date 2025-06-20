@@ -1,7 +1,7 @@
 <header>
     <div class="logo">
         
-        TODO 
+        Blog
 
     </div>
 </header>        

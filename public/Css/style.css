@@ -1,9 +1,9 @@
 /* Theme CSS */
 :root{
 --font-family : "Open sans", sans-serif;
---primary-color : #8e44ad;
+--primary-color :#ff6b6b;
 --dark-color: #95a5a6;
---danger: #ee5253;
+--danger: #e33030;
 --background-light: #ecf0f1;
 --text-color:#444;
 --text-color-light:#fff;
@@ -30,6 +30,7 @@ h1, p {
 
 h1{
     margin-bottom: 1rem;
+    color: var(--text-color)
 }
 
 ul{
