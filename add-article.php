@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <?php require_once 'includes/head.php' ?>
-    <link rel="stylesheet" href="/public/Css/index.css">
-    <title>Blog</title>
+    <link rel="stylesheet" href="/public/Css/add-article.css">
+    <title>Créer un article</title>
 </head>
 <body>
     <div class="container">
