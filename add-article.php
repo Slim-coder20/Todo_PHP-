@@ -4,6 +4,7 @@ const ERROR_TITLE_TO_SHORT = "Le titre est trop court. ";
 const ERROR_CONTENT_TO_SHORT = "L'article est trop court.";
 const ERROR_IMAGE_URL = 'L\'image doit être une url valide.'; 
 
+$filename = __DIR__ .'/data/articles.json';
 
 $errors = [
     'title' => '',
@@ -11,7 +12,8 @@ $errors = [
     'category' => '',
     'content' => ''
 
-]; 
+];
+$articles = [];
 
 // Initialiser les variables pour pré-remplir le formulaire en cas d'erreur
 $title = '';
@@ -20,7 +22,10 @@ $category = '';
 $content = '';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
-{
+{   
+    if(file_exists($filename)){
+        $articles = json_decode (file_get_contents($filename), true) ?? [];
+    }
     $_POST = filter_input_array(INPUT_POST,[
         'title' => FILTER_SANITIZE_FULL_SPECIAL_CHARS, 
         'image' => FILTER_SANITIZE_URL, 
@@ -70,11 +75,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
     if(empty(array_filter($errors, fn($e) => $e !== ''))){
         
-        echo "c'est ok";
-    } else {
-        print_r($errors);
-    }
-    echo '</pre>';
+        $articles = [...$articles,[
+            'title' => $title, 
+            'iamge' => $image, 
+            'category' => $category, 
+            'content' => $content
+            
+        ]];
+        file_put_contents($filename, json_encode($articles));
+        header('Location:/');
+    } 
 
 
 }
@@ -96,14 +106,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 <form action="/add-article.php" method="POST">
                     <div class="form-control">
                         <label for="title">Titre</label>
-                        <input type="text" name="title" id="title">
-                        <p class="text-error"></p>
+                        <input type="text" name="title" id="title" value=<?= $title ?? '' ?>>
+                        <?php  if ($errors ['title']): ?>
+                        <p class="text-error"><?= ($errors ['title']) ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="form-control">
                         <label for="image">Image</label>
-                        <input type="text" name="image" id="image">
-                        <img src="#" alt="">
-                        <p class="text-error"></p>
+                        <input type="text" name="image" id="image" value=<?= $image ?? '' ?>>
+                        <?php  if ($errors ['image']): ?>
+                        <p class="text-error"><?= ($errors ['image']) ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="form-control">
                         <label for="category">Categories</label>
@@ -112,12 +125,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                             <option value="nature">Nature</option>
                             <option value="ppolitique">Politique</option>
                         </select>
-                        <p class="text-error"></p>
+                        <?php  if ($errors ['category']): ?>
+                        <p class="text-error"><?= ($errors ['category']) ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="form-control">
                         <label for="content">Contenu</label>
-                        <textarea name="content" id="content"></textarea>
-                        <p class="text-error"></p>
+                        <textarea name="content" id="content" value=<?= $content ?? '' ?>></textarea>
+                        <?php  if ($errors ['content']): ?>
+                        <p class="text-error"><?= ($errors ['content']) ?></p>
+                        <?php endif; ?>
                     </div>
                     <div class="form-action">
                         <a href="/"class="btn btn-secondary" type="button">Annuler</a>
