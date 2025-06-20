@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <?php require_once 'includes/head.php' ?>
-    <link rel="stylesheet" href="/public/Css/index.css">
+    <link rel="stylesheet" href="/public/Css/add-article.css">
     <title>Blog</title>
 </head>
 <body>
     <div class="container">
         <?php require_once 'includes/header.php' ?>
         <div class="content">
-            <div class="block">
+            <div class="block p-20 form-container">
                 <h1>Ecrire un article</h1>
                 <form action="/add-article.php" method="POST">
                     <div class="form-control">
@@ -19,7 +19,8 @@
                     </div>
                     <div class="form-control">
                         <label for="image">Image</label>
-                        <img src="#" alt="image d'article dans le blog">
+                        <input type="text" name="image" id="image">
+                        <img src="#" alt="">
                         <p class="text-error"></p>
                     </div>
                     <div class="form-control">
@@ -37,7 +38,7 @@
                         <p class="text-error"></p>
                     </div>
                     <div class="form-action">
-                        <button class="btn btn-secondary" type="button">Annuler</button>
+                        <a href="/"class="btn btn-secondary" type="button">Annuler</a>
                         <button class="btn btn-primary" type="button">Sauvegarder</button>
                     </div>
                 </form>

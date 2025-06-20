@@ -136,6 +136,7 @@ header {
   display: flex;
   flex-flow: column;
   align-self: center;
+  align-items: center;
   padding: 2rem 0;
 }
 
@@ -155,4 +156,15 @@ footer {
   border: var(--border);
   background-color:white ;
   box-shadow: var(--box-shadow);
+}
+
+/* utils */
+
+.p-20 {
+   padding: 20px;
+}
+
+.p-10 {
+  padding: 10px;
+
 }
