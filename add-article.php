@@ -79,7 +79,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             'title' => $title, 
             'iamge' => $image, 
             'category' => $category, 
-            'content' => $content
+            'content' => $content,
+            'id' => time()
             
         ]];
         file_put_contents($filename, json_encode($articles));
