@@ -130,11 +130,12 @@ header {
 }
 /* Content  */
 .content {
+  max-width: 100rem;
+  width: 100%;
   flex: 1;
   display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
+  flex-flow: column;
+  align-self: center;
 }
 
 /* Footer */
@@ -145,4 +146,12 @@ footer {
   display: flex;
   flex-flow: row-reverse;
   color: var(--text-color-light);
+}
+
+/* Block  */
+.block{
+  border-radius: 3px;
+  border: var(--border);
+  background-color:white ;
+  box-shadow: var(--box-shadow);
 }
