@@ -136,6 +136,7 @@ header {
   display: flex;
   flex-flow: column;
   align-self: center;
+  padding: 2rem 0;
 }
 
 /* Footer */
