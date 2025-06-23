@@ -15,7 +15,12 @@
 .articles:hover .img-container{
   transform: scale(1.1);
 }
-.articles h2 {
+
+.category-container h2{
+  font-size: 1.9rem;
+  padding: 0 1rem;
+}
+.articles h3 {
   font-size: 1.7rem;
   padding: 1rem 1.5rem;
 

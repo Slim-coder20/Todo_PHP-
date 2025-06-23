@@ -124,7 +124,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         <select name="category" id="category">
                             <option value="technologie">Technologies</option>
                             <option value="nature">Nature</option>
-                            <option value="ppolitique">Politique</option>
+                            <option value="politique">Politique</option>
                         </select>
                         <?php  if ($errors ['category']): ?>
                         <p class="text-danger"><?= ($errors ['category']) ?></p>
