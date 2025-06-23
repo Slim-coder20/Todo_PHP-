@@ -1,36 +1,57 @@
-.articles-container{
+.articles-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-
 }
-.articles{
+
+.article {
   flex: 30%;
   margin: 1rem;
-  min-height: 40rem;
+  min-height: 41rem;
+  min-width: 25rem;
   cursor: pointer;
-
 }
-.articles:hover .img-container{
+
+.article:hover .img-container {
   transform: scale(1.1);
 }
 
-.category-container h2{
+.newsfeed-content h2 {
   font-size: 1.9rem;
   padding: 0 1rem;
 }
-.articles h3 {
+
+.article h3 {
   font-size: 1.7rem;
   padding: 1rem 1.5rem;
-
 }
-.img-container{
+
+.img-container {
   height: 30rem;
   background-size: cover;
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
   transition: transform 1s;
+}
 
+.newsfeed-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
 
+.category-container {
+  flex: 200px;
+}
+
+.category-container li {
+  margin: 1rem 0;
+  transition: color 0.2s;
+}
+.category-container li:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.cat-active {
+  color: var(--primary-color);
+  font-weight: 700;
 }

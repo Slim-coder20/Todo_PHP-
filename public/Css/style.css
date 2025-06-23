@@ -92,6 +92,11 @@ a {
   opacity: 0.5;
 }
 
+.small{
+  font-size: 12px;
+  margin: 0 0.5rem;
+}
+
 /*  Text erreur  */
 .text-danger {
   color: var(--danger);
