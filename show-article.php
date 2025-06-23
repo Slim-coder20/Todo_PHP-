@@ -37,6 +37,7 @@ if(!$id){
         <p class="article-content"><?= $article ['content']?></p>
         <div class="action">
             <a class="btn btn-primary" href="/form-article.php?id=<?= $article ['id'] ?>">Editer l'article</a>
+            <a class="btn btn-secondary" href="/delete-article.php?id=<?= $article ['id'] ?>">Supprimer l'article</a>
         </div>
       </div>
         
